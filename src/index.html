@@ -5,7 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./output.css" rel="stylesheet" />
         <title>Théo Zimmermann</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
         <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+
+            .marquee-text {
+                font-family: "fayte_pixelhard", monospace;
+            }
+
             @keyframes scroll {
                 0% {
                     transform: translateX(0);
@@ -23,7 +37,7 @@
 
             .marquee {
                 display: flex;
-                animation: scroll 85s linear infinite;
+                animation: scroll 160s linear infinite;
                 will-change: transform;
             }
 
@@ -34,7 +48,7 @@
             }
 
             .text-overlay {
-                color: rgba(147, 197, 253, 0.25);
+                color: rgba(129, 140, 248, 0.15);
             }
         </style>
         <script
@@ -43,18 +57,18 @@
         ></script>
     </head>
     <body
-        class="bg-indigo-950 min-h-screen flex items-start justify-center overflow-hidden pt-2"
+        class="bg-blue-950 min-h-screen flex items-start justify-center overflow-hidden"
     >
         <div
             class="marquee-wrapper"
             x-data="{ name: 'Théo Zimmermann', count: 6 }"
         >
-            <div class="marquee">
+            <div class="marquee -mt-10">
                 <!-- First set of names -->
                 <div class="marquee-content">
                     <template x-for="i in count" :key="i">
                         <span
-                            class="text-overlay text-[16rem] md:text-[22rem] lg:text-[30rem] xl:text-[36rem]"
+                            class="marquee-text text-overlay text-[16rem] md:text-[22rem] lg:text-[30rem] xl:text-[44rem]"
                             x-text="name"
                         ></span>
                     </template>
@@ -63,7 +77,7 @@
                 <div class="marquee-content" aria-hidden="true">
                     <template x-for="i in count" :key="i">
                         <span
-                            class="text-overlay text-[16rem] md:text-[22rem] lg:text-[30rem] xl:text-[36rem]"
+                            class="marquee-text text-overlay text-[16rem] md:text-[22rem] lg:text-[30rem] xl:text-[44rem]"
                             x-text="name"
                         ></span>
                     </template>
@@ -71,27 +85,105 @@
             </div>
         </div>
 
-        <!-- Fixed Bottom Menu -->
-        <nav
-            class="fixed bottom-0 left-0 right-0 bg-indigo-950/80 backdrop-blur-sm py-16"
+        <aside
+            class="fixed top-1/2 -translate-y-1/2 left-0 right-0 md:top-auto md:translate-y-0 md:bottom-32 md:left-8 md:right-auto lg:left-32 text-blue-300/60 text-sm md:text-base lg:text-lg leading-relaxed z-50 text-left px-4 md:px-0 max-w-md mx-auto md:max-w-none md:mx-0"
         >
-            <div class="flex justify-center items-center gap-20 text-5xl">
+            <div class="mb-12">
+                <div class="text-blue-800 font-semibold leading-6">
+                    2017-2021
+                </div>
+                <div class="mb-1 text-white text-sm md:text-base lg:text-lg">
+                    Frontend Developer
+                    <a
+                        href="http://melba.ch"
+                        target="_blank"
+                        class="text-blue-700 hover:text-blue-500 transition-colors font-medium"
+                        >@melba</a
+                    >
+                </div>
+                <div class="flex flex-wrap gap-1 md:gap-1.5 mt-2 justify-start">
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >Wordpress</span
+                    >
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >Vue</span
+                    >
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >Figma</span
+                    >
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >Flutter</span
+                    >
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >Quasar</span
+                    >
+                </div>
+            </div>
+
+            <div>
+                <div class="text-blue-800 font-semibold leading-6">
+                    2022-NOW
+                </div>
+                <div class="mb-1 text-white text-sm md:text-base lg:text-lg">
+                    Frontend Engineer / UI Designer R&D
+                    <a
+                        href="https://www.nagra.com/"
+                        target="_blank"
+                        class="text-blue-700 hover:text-blue-500 transition-colors font-medium"
+                        >@nagravision</a
+                    >
+                </div>
+                <div class="flex flex-wrap gap-1 md:gap-1.5 mt-2 justify-start">
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >Tailwind</span
+                    >
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >React</span
+                    >
+                    <span
+                        class="text-[0.65rem] md:text-xs px-1.5 md:px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >Next</span
+                    >
+                    <span
+                        class="text-xs px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >TypeScript</span
+                    >
+                    <span
+                        class="text-xs px-2 py-0.5 rounded bg-blue-900/40 text-blue-300/80"
+                        >AI</span
+                    >
+                </div>
+            </div>
+        </aside>
+
+        <!-- Fixed Bottom Menu -->
+        <nav class="fixed bottom-0 left-0 right-0 py-6 md:py-12 lg:py-16">
+            <div
+                class="flex justify-center items-center gap-4 md:gap-8 lg:gap-20 text-3xl md:text-4xl lg:text-5xl marquee-text"
+            >
                 <a
                     href="https://github.com/TheoZimmermann"
                     target="_blank"
-                    class="text-indigo-400 hover:text-indigo-300 transition-colors"
+                    class="text-blue-700 hover:text-blue-500 transition-colors"
                     >Github</a
                 >
                 <a
                     href="https://www.linkedin.com/in/tzimm-pro/"
                     target="_blank"
-                    class="text-indigo-400 hover:text-indigo-300 transition-colors"
+                    class="text-blue-700 hover:text-blue-500 transition-colors"
                     >Linkedin</a
                 >
                 <a
                     href="mailto:contact@theozimmermann.ch"
                     target="_blank"
-                    class="text-amber-400 hover:text-amber-300 transition-colors"
+                    class="text-white hover:text-white/70 transition-colors"
                     >Contact</a
                 >
             </div>
