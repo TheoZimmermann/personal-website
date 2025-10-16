@@ -4,32 +4,97 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./output.css" rel="stylesheet" />
-        <title>Theo Zimmermann</title>
+        <title>Théo Zimmermann</title>
         <style>
             @keyframes scroll {
                 0% {
-                    transform: translateX(-100%);
+                    transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(100%);
+                    transform: translateX(-50%);
                 }
             }
 
+            .marquee-wrapper {
+                display: flex;
+                width: 100%;
+                overflow: hidden;
+            }
+
             .marquee {
-                animation: scroll 30s linear infinite;
-                white-space: nowrap;
+                display: flex;
+                animation: scroll 85s linear infinite;
+                will-change: transform;
+            }
+
+            .marquee-content {
+                display: flex;
+                gap: 4rem;
+                flex-shrink: 0;
+            }
+
+            .text-overlay {
+                color: rgba(147, 197, 253, 0.25);
             }
         </style>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
     </head>
     <body
-        class="bg-black min-h-screen flex items-center justify-center overflow-hidden"
+        class="bg-indigo-950 min-h-screen flex items-start justify-center overflow-hidden pt-2"
     >
-        <div class="w-full">
-            <h1
-                class="marquee text-white font-bold text-9xl md:text-[12rem] lg:text-[16rem]"
-            >
-                Theo Zimmermann
-            </h1>
+        <div
+            class="marquee-wrapper"
+            x-data="{ name: 'Théo Zimmermann', count: 6 }"
+        >
+            <div class="marquee">
+                <!-- First set of names -->
+                <div class="marquee-content">
+                    <template x-for="i in count" :key="i">
+                        <span
+                            class="text-overlay text-[16rem] md:text-[22rem] lg:text-[30rem] xl:text-[36rem]"
+                            x-text="name"
+                        ></span>
+                    </template>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="marquee-content" aria-hidden="true">
+                    <template x-for="i in count" :key="i">
+                        <span
+                            class="text-overlay text-[16rem] md:text-[22rem] lg:text-[30rem] xl:text-[36rem]"
+                            x-text="name"
+                        ></span>
+                    </template>
+                </div>
+            </div>
         </div>
+
+        <!-- Fixed Bottom Menu -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-indigo-950/80 backdrop-blur-sm py-16"
+        >
+            <div class="flex justify-center items-center gap-20 text-5xl">
+                <a
+                    href="https://github.com/TheoZimmermann"
+                    target="_blank"
+                    class="text-indigo-400 hover:text-indigo-300 transition-colors"
+                    >Github</a
+                >
+                <a
+                    href="https://www.linkedin.com/in/tzimm-pro/"
+                    target="_blank"
+                    class="text-indigo-400 hover:text-indigo-300 transition-colors"
+                    >Linkedin</a
+                >
+                <a
+                    href="mailto:contact@theozimmermann.ch"
+                    target="_blank"
+                    class="text-amber-400 hover:text-amber-300 transition-colors"
+                    >Contact</a
+                >
+            </div>
+        </nav>
     </body>
 </html>

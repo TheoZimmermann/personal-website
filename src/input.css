@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+/* Custom Font - Fayte Pixel */
+@font-face {
+    font-family: "fayte_pixelhard";
+    src:
+        url("./fonts/faytepixel-hard-webfont.woff2") format("woff2"),
+        url("./fonts/faytepixel-hard-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "fayte_pixelsoft";
+    src:
+        url("./fonts/faytepixel-soft-webfont.woff2") format("woff2"),
+        url("./fonts/faytepixel-soft-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply custom font globally */
+body {
+    font-family: "fayte_pixelhard", monospace;
+}
